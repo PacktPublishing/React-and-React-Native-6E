@@ -12,13 +12,13 @@ const id = (function* () {
 function MyFeature() {
   const [articles, setArticles] = React.useState([
     {
-      id: id.next(),
+      id: id.next().value,
       title: "Article 1",
       summary: "Article 1 Summary",
       display: "none",
     },
     {
-      id: id.next(),
+      id: id.next().value,
       title: "Article 2",
       summary: "Article 2 Summary",
       display: "none",
@@ -39,7 +39,7 @@ function MyFeature() {
     setArticles((state) => [
       ...state,
       {
-        id: id.next(),
+        id: id.next().value,
         title: title,
         summary: summary,
         display: "none",
@@ -82,9 +82,9 @@ function MyFeature() {
       <article>
         <ul>
           {articles.map((i) => (
-            <li key={i.id.value}>
+            <li key={i.id}>
               <a
-                href={`#${i.id.value}`}
+                href={`#${i.id}`}
                 title="Toggle Summary"
                 onClick={() => onClickToggle(i.id)}
               >
