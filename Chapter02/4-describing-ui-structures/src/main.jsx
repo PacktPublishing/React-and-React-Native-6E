@@ -14,7 +14,7 @@ root.render(
       <p>The main content...</p>
     </main>
     <footer>
-      <small>&copy; 2024</small>
+      <small>&copy; All rights reserved</small>
     </footer>
   </section>
 );
