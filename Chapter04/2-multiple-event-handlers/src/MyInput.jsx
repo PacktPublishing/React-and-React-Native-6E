@@ -1,13 +1,17 @@
 function MyInput() {
-  const onChange = () => {
-    console.log("changed");
+  const onChange = (e) => {
+    console.log("changed", e.target.value);
   };
 
   const onBlur = () => {
     console.log("blured");
   };
 
-  return <input onChange={onChange} onBlur={onBlur} />;
+  const onFocus = () => {
+    console.log("focused");
+  }
+
+  return <input onChange={onChange} onBlur={onBlur} onFocus={onFocus} />;
 }
 
 export default MyInput;
