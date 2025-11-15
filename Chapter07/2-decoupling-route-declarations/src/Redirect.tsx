@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 type RedirectProps = {
@@ -8,7 +8,7 @@ type RedirectProps = {
 function Redirect({ path }: RedirectProps) {
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     navigate(path);
   }, [navigate, path]);
 

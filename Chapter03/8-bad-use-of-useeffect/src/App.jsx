@@ -1,8 +1,8 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [id, setId] = React.useState("loading...");
-  const [name, setName] = React.useState("loading...");
+  const [id, setId] = useState("loading...");
+  const [name, setName] = useState("loading...");
 
   const fetchUser = () => {
     console.count("fetching user");
@@ -13,7 +13,7 @@ function App() {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchUser().then((user) => {
       setId(user.id); 
       setName(user.name); 

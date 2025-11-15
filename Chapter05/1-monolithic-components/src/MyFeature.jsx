@@ -1,5 +1,4 @@
-import * as React from "react";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 
 const id = (function* () {
   let i = 1;
@@ -10,7 +9,7 @@ const id = (function* () {
 })();
 
 function MyFeature() {
-  const [articles, setArticles] = React.useState([
+  const [articles, setArticles] = useState([
     {
       id: id.next().value,
       title: "Article 1",
@@ -24,8 +23,8 @@ function MyFeature() {
       display: "none",
     },
   ]);
-  const [title, setTitle] = React.useState("");
-  const [summary, setSummary] = React.useState("");
+  const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
 
   const onChangeTitle = useCallback((e) => {
     setTitle(e.target.value);

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { startTransition, useState, type ChangeEventHandler } from "react";
 
 const unfilteredItems = new Array(25000)
   .fill(null)
@@ -13,15 +13,15 @@ function filterItems(filter: string): Promise<{ id: number; name: string }[]> {
 }
 
 export default function AsyncUpdates() {
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [filter, setFilter] = React.useState("");
-  const [items, setItems] = React.useState<{ id: number; name: string }[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [filter, setFilter] = useState("");
+  const [items, setItems] = useState<{ id: number; name: string }[]>([]);
 
-  const onChange: React.ChangeEventHandler<HTMLInputElement> = async (e) => {
+  const onChange: ChangeEventHandler<HTMLInputElement> = async (e) => {
     setFilter(e.target.value);
     setIsLoading(true);
 
-    React.startTransition(() => {
+    startTransition(() => {
       if (e.target.value === "") {
         setItems([]);
         setIsLoading(false);

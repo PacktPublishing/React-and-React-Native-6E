@@ -1,7 +1,7 @@
-import * as React from "react";
+import { lazy, Suspense, useState } from "react";
 
-const First = React.lazy(() => import("./First"));
-const Second = React.lazy(() => import("./Second"));
+const First = lazy(() => import("./First"));
+const Second = lazy(() => import("./Second"));
 
 function ShowComponent({ name }: { name: string }) {
   switch (name) {
@@ -15,7 +15,7 @@ function ShowComponent({ name }: { name: string }) {
 }
 
 function App() {
-  const [component, setComponent] = React.useState("");
+  const [component, setComponent] = useState("");
 
   return (
     <>
@@ -30,9 +30,9 @@ function App() {
           <option value="second">Second</option>
         </select>
       </label>
-      <React.Suspense fallback={<p>loading...</p>}>
+      <Suspense fallback={<p>loading...</p>}>
         <ShowComponent name={component} />
-      </React.Suspense>
+      </Suspense>
     </>
   );
 }

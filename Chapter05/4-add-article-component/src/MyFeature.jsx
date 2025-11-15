@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useCallback, useState } from "react";
 import ArticleList from "./ArticleList";
 
 const id = (function* () {
@@ -10,7 +10,7 @@ const id = (function* () {
 })();
 
 function MyFeature() {
-  const [articles, setArticles] = React.useState([
+  const [articles, setArticles] = useState([
     {
       id: id.next(),
       title: "Article 1",
@@ -24,18 +24,18 @@ function MyFeature() {
       display: "none",
     },
   ]);
-  const [title, setTitle] = React.useState("");
-  const [summary, setSummary] = React.useState("");
+  const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
 
-  const onChangeTitle = React.useCallback((e) => {
+  const onChangeTitle = useCallback((e) => {
     setTitle(e.target.value);
   }, []);
 
-  const onChangeSummary = React.useCallback((e) => {
+  const onChangeSummary = useCallback((e) => {
     setSummary(e.target.value);
   }, []);
 
-  const onClickAdd = React.useCallback(() => {
+  const onClickAdd = useCallback(() => {
     setArticles((state) => [
       ...state,
       {
@@ -49,7 +49,7 @@ function MyFeature() {
     setSummary("");
   }, [summary, title]);
 
-  const onClickRemove = React.useCallback((id) => {
+  const onClickRemove = useCallback((id) => {
     setArticles((state) => state.filter((article) => article.id !== id));
   }, []);
 

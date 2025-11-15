@@ -1,7 +1,7 @@
-import * as React from "react";
+import { useState } from "react";
 
 export default function BatchingUpdates() {
-  const [value, setValue] = React.useState("loading...");
+  const [value, setValue] = useState("loading...");
 
   function onStart() {
     setTimeout(() => {

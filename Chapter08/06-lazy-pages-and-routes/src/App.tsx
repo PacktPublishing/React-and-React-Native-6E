@@ -1,15 +1,15 @@
-import * as React from "react";
+import { lazy, Suspense } from "react";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
   Link,
   Outlet,
+  Route,
+  BrowserRouter as Router,
+  Routes,
 } from "react-router";
 import { FadeLoader } from "react-spinners";
 
-const First = React.lazy(() => import("./First"));
-const Second = React.lazy(() => import("./Second"));
+const First = lazy(() => import("./First"));
+const Second = lazy(() => import("./Second"));
 
 function Layout() {
   return (
@@ -24,9 +24,9 @@ function Layout() {
         </span>
       </nav>
       <section>
-        <React.Suspense fallback={<FadeLoader color={"lightblue"} />}>
+        <Suspense fallback={<FadeLoader color={"lightblue"} />}>
           <Outlet />
-        </React.Suspense>
+        </Suspense>
       </section>
     </section>
   );

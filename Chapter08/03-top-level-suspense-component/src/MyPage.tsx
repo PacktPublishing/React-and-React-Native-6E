@@ -1,6 +1,6 @@
-import * as React from "react";
+import { lazy } from "react";
 
-const MyFeature = React.lazy(() => import("./MyFeature"));
+const MyFeature = lazy(() => import("./MyFeature"));
 
 function MyPage() {
   return (

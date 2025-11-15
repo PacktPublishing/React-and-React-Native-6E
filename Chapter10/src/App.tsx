@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useReducer } from "react";
 import AsyncUpdates from "./AsyncUpdates";
 import BatchingUpdates from "./BatchingUpdates";
 import PrioritizingUpdates from "./PrioritizingUpdates";
@@ -34,7 +34,7 @@ const reducer = (_: State, action: Action): State => {
 };
 
 export default function App() {
-  let [state, dispatch] = React.useReducer(reducer, initialState);
+  let [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div>

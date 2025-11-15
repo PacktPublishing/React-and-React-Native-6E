@@ -1,6 +1,6 @@
-import * as React from "react";
+import { lazy } from "react";
 
-const MyComponent = React.lazy(() => import("./MyComponent"));
+const MyComponent = lazy(() => import("./MyComponent"));
 
 function App() {
   return <MyComponent />;

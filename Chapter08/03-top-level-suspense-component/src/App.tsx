@@ -1,11 +1,11 @@
-import * as React from "react";
+import { Suspense } from "react";
 import MyPage from "./MyPage";
 
 function App() {
   return (
-    <React.Suspense fallback={"loading..."}>
+    <Suspense fallback={"loading..."}>
       <MyPage />
-    </React.Suspense>
+    </Suspense>
   );
 }
 

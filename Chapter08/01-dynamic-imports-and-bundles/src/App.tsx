@@ -1,11 +1,11 @@
-import * as React from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 function App() {
-  const [MyComponent, setMyComponent] = React.useState<() => React.ReactNode>(
+  const [MyComponent, setMyComponent] = useState<() => ReactNode>(
     () => () => null
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     import("./MyComponent").then((module) => {
       setMyComponent(() => module.default);
     });
