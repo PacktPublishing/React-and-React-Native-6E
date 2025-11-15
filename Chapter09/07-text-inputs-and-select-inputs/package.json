@@ -1,5 +1,5 @@
 {
-  "name": "4-navigating-with-tabs",
+  "name": "07-text-inputs-and-select-inputs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,8 +15,7 @@
     "@fontsource/roboto": "^5.2.6",
     "@mui/material": "^7.1.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router": "^7.6.2"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
