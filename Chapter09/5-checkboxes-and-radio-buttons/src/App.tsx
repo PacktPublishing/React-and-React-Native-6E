@@ -1,26 +1,29 @@
-import React from "react";
 import Checkbox from "@mui/material/Checkbox";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormLabel from "@mui/material/FormLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import { useState } from "react";
+import { Box } from "@mui/material";
 
 export default function Checkboxes() {
-  const [checkbox, setCheckbox] = React.useState(false);
-  const [radio, setRadio] = React.useState("First");
+  const [checkbox, setCheckbox] = useState(false);
+  const [radio, setRadio] = useState("First");
 
   return (
-    <div>
-      <FormControlLabel
-        label={`Checkbox ${checkbox ? "(checked)" : ""}`}
-        control={
-          <Checkbox
-            checked={checkbox}
-            onChange={() => setCheckbox(!checkbox)}
-          />
-        }
-      />
+    <Box sx={{ display: "flex", flexDirection: "row" }}>
+      <Box sx={{ minWidth: 250 }}>
+        <FormControlLabel
+          label={`Checkbox ${checkbox ? "(checked)" : "(unchecked)"}`}
+          control={
+            <Checkbox
+              checked={checkbox}
+              onChange={() => setCheckbox(!checkbox)}
+            />
+          }
+        />
+      </Box>
       <FormControl component="fieldset">
         <FormLabel component="legend">{radio}</FormLabel>
         <RadioGroup value={radio} onChange={(e) => setRadio(e.target.value)}>
@@ -29,6 +32,6 @@ export default function Checkboxes() {
           <FormControlLabel value="Third" label="Third" control={<Radio />} />
         </RadioGroup>
       </FormControl>
-    </div>
+    </Box>
   );
 }
