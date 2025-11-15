@@ -8,6 +8,7 @@ import First from "./First";
 import Second from "./Second";
 import Third from "./Third";
 import ListItemButton from "@mui/material/ListItemButton";
+import { Box } from '@mui/material';
 
 const links = [
   { url: "/first", name: "First Page" },
@@ -37,8 +38,8 @@ export default function App() {
         </Routes>
       </section>
       <Drawer open={open} onClose={toggleDrawer}>
-        <div
-          style={{ width: 250 }}
+        <Box
+          sx={{ width: 250 }}
           role="presentation"
           onClick={toggleDrawer}
           onKeyDown={toggleDrawer}
@@ -58,7 +59,7 @@ export default function App() {
               </NavLink>
             ))}
           </List>
-        </div>
+        </Box>
       </Drawer>
     </BrowserRouter>
   );
