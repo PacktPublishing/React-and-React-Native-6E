@@ -1,6 +1,6 @@
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { createRoot } from "react-dom/client";
+import App from "./App.tsx";
 
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
@@ -10,7 +10,7 @@ const client = new ApolloClient({
   },
 });
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("root")!).render(
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>

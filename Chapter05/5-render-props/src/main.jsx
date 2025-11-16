@@ -1,9 +1,9 @@
-import * as ReactDOM from "react-dom/client";
-import MyFeature from "./MyFeature";
-import ArticleList from "./ArticleList";
+import { createRoot } from "react-dom/client";
 import AddArticle from "./AddArticle";
+import ArticleList from "./ArticleList";
+import MyFeature from "./MyFeature";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 root.render(
   <MyFeature
     addArticle={({
