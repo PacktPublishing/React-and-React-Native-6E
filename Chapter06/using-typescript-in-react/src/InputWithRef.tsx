@@ -1,7 +1,7 @@
-import React from "react";
+import { useRef } from "react";
 
 const InputWithRef = () => {
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const focusInput = () => {
     if (inputRef.current) {

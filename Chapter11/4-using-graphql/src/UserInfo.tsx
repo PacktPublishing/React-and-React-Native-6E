@@ -1,11 +1,11 @@
-import React from "react";
+import {FC} from "react";
 import type { GitHubUser } from "./GitHubUser";
 
 interface GitHubUserProps {
   user: GitHubUser;
 }
 
-const UserInfo: React.FC<GitHubUserProps> = ({ user }) => {
+const UserInfo: FC<GitHubUserProps> = ({ user }) => {
   return (
     <div>
       <img src={user.avatarUrl} alt={user.login} width="100" height="100" />
