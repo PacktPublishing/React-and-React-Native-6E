@@ -1,13 +1,9 @@
-import { createRoot } from "react-dom/client";
-import { createElement } from "react";
+import {createRoot} from "react-dom/client";
 
 const root = createRoot(document.getElementById("root"));
 
 root.render(
-  createElement(
-    "p",
-    null,
-    "Hello, ",
-    createElement("strong", null, "JSX")
-  )
+  <p>
+    Hello, <strong>JSX</strong>
+  </p>
 );
