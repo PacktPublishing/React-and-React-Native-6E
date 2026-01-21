@@ -1,9 +1,9 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import MyButton from "./MyButton";
-import MyList from "./MyList";
 import MyComponent from "./MyComponent";
+import MyList from "./MyList";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 
 const appState = {
   text: "My Button",

@@ -1,9 +1,7 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import MyComponent from "./MyComponent";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
+createRoot(document.getElementById("root")).render(
   <section>
     <MyComponent
       title="Welcome to My App"

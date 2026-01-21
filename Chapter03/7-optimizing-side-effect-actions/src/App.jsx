@@ -1,10 +1,10 @@
-import * as React from "react";
+import { useCallback, useEffect, useState } from "react";
 
 function App() {
-  const [id, setId] = React.useState("loading...");
-  const [name, setName] = React.useState("loading...");
+  const [id, setId] = useState("loading...");
+  const [name, setName] = useState("loading...");
 
-  const fetchUser = React.useCallback(() => {
+  const fetchUser = useCallback(() => {
     console.count("fetching user");
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -13,7 +13,7 @@ function App() {
     });
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchUser().then((user) => {
       setId(user.id);
       setName(user.name);

@@ -1,9 +1,9 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 
 function Timer() {
-  const [timer, setTimer] = React.useState(100);
+  const [timer, setTimer] = useState(100);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setTimer((prevTimer) => (prevTimer === 0 ? 0 : prevTimer - 1));
     }, 1000);

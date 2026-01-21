@@ -1,8 +1,8 @@
-import * as React from "react";
+import { useState } from "react";
 
 function App() {
-  const [name, setName] = React.useState("Mike");
-  const [age, setAge] = React.useState(32);
+  const [name, setName] = useState("Mike");
+  const [age, setAge] = useState(32);
 
   return (
     <>

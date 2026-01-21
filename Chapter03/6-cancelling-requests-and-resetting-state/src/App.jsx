@@ -1,10 +1,10 @@
-import * as React from "react";
+import { useState } from "react";
 import Timer from "./Timer";
 
 const ShowHideTimer = ({ show }) => (show ? <Timer /> : null);
 
 function App() {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = useState(false);
 
   return (
     <>
