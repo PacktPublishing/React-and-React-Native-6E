@@ -1,4 +1,4 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
 function MyComponent() {
   return (
@@ -9,5 +9,4 @@ function MyComponent() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<MyComponent />);
+createRoot(document.getElementById("root")).render(<MyComponent />);

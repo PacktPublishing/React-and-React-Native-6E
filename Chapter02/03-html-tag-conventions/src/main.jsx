@@ -1,6 +1,6 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 
 root.render(
   <button title="My Button" foo="bar">

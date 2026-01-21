@@ -1,8 +1,6 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
+createRoot(document.getElementById("root")).render(
   <div>
     <button />
     <code />
@@ -13,5 +11,5 @@ root.render(
     <select />
     <table />
     <ul />
-  </div>
+  </div>,
 );

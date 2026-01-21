@@ -1,11 +1,9 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
-import WithoutFragments from "./WithoutFragments";
 import WithFragments from "./WithFragments";
+import WithoutFragments from "./WithoutFragments";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
+createRoot(document.getElementById("root")).render(
   <div>
     <WithoutFragments />
     <WithFragments />

@@ -1,8 +1,6 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
+createRoot(document.getElementById("root")).render(
   <section>
     <header>
       <h1>A Header</h1>

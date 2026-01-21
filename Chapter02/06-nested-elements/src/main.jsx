@@ -1,11 +1,8 @@
-import * as ReactDOM from "react-dom/client";
-
-import MySection from "./MySection";
+import { createRoot } from "react-dom/client";
 import MyButton from "./MyButton";
+import MySection from "./MySection";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
+createRoot(document.getElementById("root")).render(
   <MySection>
     <MyButton>My Button Text</MyButton>
   </MySection>

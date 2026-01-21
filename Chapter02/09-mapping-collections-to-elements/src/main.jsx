@@ -1,4 +1,4 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
 const array = ["First", "Second", "Third"];
 
@@ -8,9 +8,7 @@ const object = {
   third: 3,
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
+createRoot(document.getElementById("root")).render(
   <section>
     <h1>Array</h1>
     <ul>
