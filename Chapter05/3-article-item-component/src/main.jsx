@@ -1,5 +1,4 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import MyFeature from "./MyFeature";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<MyFeature />);
+createRoot(document.getElementById("root")).render(<MyFeature />);

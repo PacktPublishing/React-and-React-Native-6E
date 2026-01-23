@@ -1,9 +1,9 @@
-import React from "react";
+import { useCallback, useState } from "react";
 
 function ArticleItem({ article, onClickRemove }) {
-  const [isOpened, setIsOpened] = React.useState(article.display !== "none");
+  const [isOpened, setIsOpened] = useState(article.display !== "none");
 
-  const onClickToggle = React.useCallback(() => {
+  const onClickToggle = useCallback(() => {
     setIsOpened((state) => !state);
   }, []);
 
