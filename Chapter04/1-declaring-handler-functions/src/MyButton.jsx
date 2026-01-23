@@ -1,9 +1,9 @@
 function MyButton(props) {
-  const clickHandler = () => {
+  const handleClick = () => {
     console.log("clicked");
   };
 
-  return <button onClick={clickHandler}>{props.children}</button>;
+  return <button onClick={handleClick}>{props.children}</button>;
 }
 
 export default MyButton;

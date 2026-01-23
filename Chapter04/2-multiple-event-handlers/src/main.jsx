@@ -1,5 +1,4 @@
-import * as ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import MyInput from "./MyInput";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<MyInput />);
+createRoot(document.getElementById("root")).render(<MyInput />);
