@@ -1,6 +1,4 @@
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Menu, MenuItem, ThemeProvider, createTheme } from "@mui/material";
 
 const theme = createTheme({
   typography: {

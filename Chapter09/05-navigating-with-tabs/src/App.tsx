@@ -1,14 +1,12 @@
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import {
-  Link,
-  useLocation,
-  matchPath,
   createBrowserRouter,
-  RouterProvider,
+  Link,
+  matchPath,
   Outlet,
+  RouterProvider,
+  useLocation,
 } from "react-router";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import { Box, Typography } from "@mui/material";
 
 function useRouteMatch(patterns: readonly string[]) {
   const { pathname } = useLocation();

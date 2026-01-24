@@ -1,8 +1,8 @@
 import { useState } from "react";
-import TextField from "@mui/material/TextField";
+import { TextField } from "@mui/material";
 
 export default function MyTextInput() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState<string>('');
 
   return (
     <TextField

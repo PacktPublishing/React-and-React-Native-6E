@@ -1,5 +1,4 @@
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import { Container, Typography } from "@mui/material";
 
 export default function MyApp() {
   const textStyle = {

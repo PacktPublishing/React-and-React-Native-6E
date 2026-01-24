@@ -1,7 +1,4 @@
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import { Stack, styled } from "@mui/material";
+import { Grid, Paper, Stack, styled, Typography } from "@mui/material";
 
 const headerFooterStyle = {
   textAlign: "center",

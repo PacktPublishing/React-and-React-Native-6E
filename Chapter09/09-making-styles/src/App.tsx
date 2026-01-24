@@ -1,5 +1,4 @@
-import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
+import { Button, styled } from "@mui/material";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   "&.MuiButton-root": { margin: theme.spacing(1) },

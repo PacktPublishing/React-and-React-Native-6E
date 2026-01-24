@@ -1,6 +1,6 @@
-import FormGroup from "@mui/material/FormGroup";
-import MyTextInput from "./MyTextInput";
+import { FormGroup } from "@mui/material";
 import MySelect from "./MySelect";
+import MyTextInput from "./MyTextInput";
 
 export default function App() {
   return (

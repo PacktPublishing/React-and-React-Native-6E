@@ -1,11 +1,8 @@
 import { useState } from "react";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
 export default function MySelect() {
-  const [value, setValue] = useState<string | undefined>();
+  const [value, setValue] = useState<string>('');
 
   return (
     <FormControl>

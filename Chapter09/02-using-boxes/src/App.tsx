@@ -1,5 +1,4 @@
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { Box, Typography } from "@mui/material";
 
 export default function Example() {
   return (
@@ -23,6 +22,8 @@ export default function Example() {
           justifyContent: "center",
           height: "100px",
           borderRadius: "30px",
+          maxWidth: "sm",
+          mx: "auto",
         }}
       >
         <Typography>Second Box</Typography>

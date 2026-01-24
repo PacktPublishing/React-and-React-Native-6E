@@ -1,13 +1,15 @@
+import {
+  Button,
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
 import { useState } from "react";
-import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import ListItemText from "@mui/material/ListItemText";
-import { BrowserRouter, Route, Routes, NavLink } from "react-router";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router";
 import First from "./First";
 import Second from "./Second";
 import Third from "./Third";
-import ListItemButton from "@mui/material/ListItemButton";
 
 const links = [
   { url: "/first", name: "First Page" },
@@ -18,7 +20,7 @@ const links = [
 export default function App() {
   const [open, setOpen] = useState(false);
 
-  const toggleDrawer = ({ type, key }: { type?: string; key?: string }) => {
+  const handleToggleDrawer = ({ type, key }: { type?: string; key?: string }) => {
     if (type === "keydown" && (key === "Tab" || key === "Shift")) {
       return;
     }
@@ -28,7 +30,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Button onClick={toggleDrawer}>Open Nav</Button>
+      <Button onClick={handleToggleDrawer}>Open Nav</Button>
       <section>
         <Routes>
           <Route path="/first" element={<First />} />
@@ -36,12 +38,12 @@ export default function App() {
           <Route path="/third" element={<Third />} />
         </Routes>
       </section>
-      <Drawer open={open} onClose={toggleDrawer}>
+      <Drawer open={open} onClose={handleToggleDrawer}>
         <div
           style={{ width: 250 }}
           role="presentation"
-          onClick={toggleDrawer}
-          onKeyDown={toggleDrawer}
+          onClick={handleToggleDrawer}
+          onKeyDown={handleToggleDrawer}
         >
           <List component="nav">
             {links.map((link) => (
