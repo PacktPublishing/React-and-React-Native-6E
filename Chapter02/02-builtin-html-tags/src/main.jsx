@@ -11,5 +11,5 @@ createRoot(document.getElementById("root")).render(
     <select />
     <table />
     <ul />
-  </div>,
+  </div>
 );
