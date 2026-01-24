@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <p>Nesting Routes</p>,
+        element: <h1>Nesting Routes</h1>,
       },
       routeOne,
       routeTwo,
