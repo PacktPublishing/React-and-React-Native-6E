@@ -1,22 +1,22 @@
 import { useCallback, useState } from "react";
 
-function ArticleItem({ article, onClickRemove }) {
+function ArticleItem({ article, onRemove }) {
   const [isOpened, setIsOpened] = useState(article.display !== "none");
 
-  const onClickToggle = useCallback(() => {
+  const handleToggleSummary = useCallback(() => {
     setIsOpened((state) => !state);
   }, []);
 
   return (
     <li>
-      <a href={`#${article.id}`} title="Toggle Summary" onClick={onClickToggle}>
+      <a href={`#${article.id}`} title="Toggle Summary" onClick={handleToggleSummary}>
         {article.title}
       </a>
       &nbsp;
       <button
         href={`#${article.id}`}
         title="Remove"
-        onClick={() => onClickRemove(article.id)}
+        onClick={() => onRemove(article.id)}
       >
         &#10007;
       </button>

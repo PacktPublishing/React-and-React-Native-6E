@@ -10,7 +10,7 @@ createRoot(document.getElementById("root")).render(
       summary,
       onChangeTitle,
       onChangeSummary,
-      onClickAdd,
+      onAdd,
     }) => (
       <AddArticle
         name="Articles"
@@ -18,11 +18,11 @@ createRoot(document.getElementById("root")).render(
         summary={summary}
         onChangeTitle={onChangeTitle}
         onChangeSummary={onChangeSummary}
-        onClickAdd={onClickAdd}
+        onAdd={onAdd}
       />
     )}
-    articleList={({ articles, onClickRemove }) => (
-      <ArticleList articles={articles} onClickRemove={onClickRemove} />
+    articleList={({ articles, onRemove }) => (
+      <ArticleList articles={articles} onRemove={onRemove} />
     )}
   />
 );

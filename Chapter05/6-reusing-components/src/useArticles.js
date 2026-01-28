@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-const id = (function* () {
+export const idGenerator = (function* () {
   let i = 1;
   while (true) {
     yield i;
@@ -9,23 +9,40 @@ const id = (function* () {
 })();
 
 export default function useArticles(initial = []) {
-    const [articles, setArticles] = useState(initial);
-    const [title, setTitle] = useState("");
-    const [summary, setSummary] = useState("");
-  
-    const onChangeTitle = useCallback((e) => setTitle(e.target.value), []);
-    const onChangeSummary = useCallback((e) => setSummary(e.target.value), []);
-    const onClickAdd = useCallback(() => {
-      setArticles((state) => [
-        ...state,
-        { id: id.next(), title, summary, display: "none" },
-      ]);
-      setTitle("");
-      setSummary("");
-    }, [title, summary]);
-    const onClickRemove = useCallback((id) => {
-      setArticles((state) => state.filter((a) => a.id !== id));
-    }, []);
-  
-    return { articles, title, summary, onChangeTitle, onChangeSummary, onClickAdd, onClickRemove };
-  }
+  const [articles, setArticles] = useState(initial);
+  const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
+
+  const handleChangeTitle = useCallback((e) => setTitle(e.target.value), []);
+  const handleChangeSummary = useCallback(
+    (e) => setSummary(e.target.value),
+    [],
+  );
+  const handleAddArticle = useCallback(() => {
+    setArticles((state) => [
+      ...state,
+      {
+        id: idGenerator.next().value,
+        title: title,
+        summary: summary,
+        display: "none",
+      },
+    ]);
+    setTitle("");
+    setSummary("");
+  }, [summary, title]);
+
+  const handleRemoveArticle = useCallback((id) => {
+    setArticles((state) => state.filter((a) => a.id !== id));
+  }, []);
+
+  return {
+    articles,
+    title,
+    summary,
+    handleChangeTitle,
+    handleChangeSummary,
+    handleAddArticle,
+    handleRemoveArticle,
+  };
+}

@@ -1,13 +1,13 @@
 import ArticleItem from "./ArticleItem";
 
-function ArticleList({ articles, onClickRemove }) {
+function ArticleList({ articles, onRemove }) {
   return (
     <ul>
       {articles.map((article) => (
         <ArticleItem
-          key={article.id.value}
+          key={article.id}
           article={article}
-          onClickRemove={onClickRemove}
+          onRemove={onRemove}
         />
       ))}
     </ul>

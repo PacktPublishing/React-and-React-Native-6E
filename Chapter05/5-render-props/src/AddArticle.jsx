@@ -4,14 +4,14 @@ function AddArticle({
   summary,
   onChangeTitle,
   onChangeSummary,
-  onClickAdd,
+  onAdd,
 }) {
   return (
     <section>
       <h1>{name}</h1>
       <input placeholder="Title" value={title} onChange={onChangeTitle} />
       <input placeholder="Summary" value={summary} onChange={onChangeSummary} />
-      <button onClick={onClickAdd}>Add</button>
+      <button onClick={onAdd}>Add</button>
     </section>
   );
 }

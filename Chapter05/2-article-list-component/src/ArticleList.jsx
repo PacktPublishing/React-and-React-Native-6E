@@ -1,12 +1,12 @@
-function ArticleList({ articles, onClickToggle, onClickRemove }) {
+function ArticleList({ articles, onToggle, onRemove }) {
   return (
     <ul>
       {articles.map((i) => (
-        <li key={i.id.value}>
+        <li key={i.id}>
           <a
             href={`#${i.id}`}
             title="Toggle Summary"
-            onClick={() => onClickToggle(i.id)}
+            onClick={() => onToggle(i.id)}
           >
             {i.title}
           </a>
@@ -14,7 +14,7 @@ function ArticleList({ articles, onClickToggle, onClickRemove }) {
           <button
             href={`#${i.id}`}
             title="Remove"
-            onClick={() => onClickRemove(i.id)}
+            onClick={() => onRemove(i.id)}
           >
             &#10007;
           </button>

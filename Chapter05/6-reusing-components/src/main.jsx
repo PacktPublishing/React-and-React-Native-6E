@@ -7,22 +7,22 @@ const renderAddArticle = ({
   name,
   title,
   summary,
-  onChangeTitle,
-  onChangeSummary,
-  onClickAdd,
+  handleChangeTitle,
+  handleChangeSummary,
+  handleAddArticle,
 }) => (
   <AddArticle
     name={name}
     title={title}
     summary={summary}
-    onChangeTitle={onChangeTitle}
-    onChangeSummary={onChangeSummary}
-    onClickAdd={onClickAdd}
+    onChangeTitle={handleChangeTitle}
+    onChangeSummary={handleChangeSummary}
+    onAdd={handleAddArticle}
   />
 );
 
-const renderArticleList = ({ articles, onClickRemove }) => (
-  <ArticleList articles={articles} onClickRemove={onClickRemove} />
+const renderArticleList = ({ articles, onRemove }) => (
+  <ArticleList articles={articles} onRemove={onRemove} />
 );
 
 createRoot(document.getElementById("root")).render(

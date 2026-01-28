@@ -12,13 +12,13 @@ const id = (function* () {
 function MyFeature() {
   const [articles, setArticles] = useState([
     {
-      id: id.next(),
+      id: id.next().value,
       title: "Article 1",
       summary: "Article 1 Summary",
       display: "none",
     },
     {
-      id: id.next(),
+      id: id.next().value,
       title: "Article 2",
       summary: "Article 2 Summary",
       display: "none",
@@ -27,19 +27,19 @@ function MyFeature() {
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
 
-  const onChangeTitle = useCallback((e) => {
+  const handleChangeTitle = useCallback((e) => {
     setTitle(e.target.value);
   }, []);
 
-  const onChangeSummary = useCallback((e) => {
+  const handleChangeSummary = useCallback((e) => {
     setSummary(e.target.value);
   }, []);
 
-  const onClickAdd = useCallback(() => {
+  const handleAddArticle = useCallback(() => {
     setArticles((state) => [
       ...state,
       {
-        id: id.next(),
+        id: id.next().value,
         title: title,
         summary: summary,
         display: "none",
@@ -49,7 +49,7 @@ function MyFeature() {
     setSummary("");
   }, [summary, title]);
 
-  const onClickRemove = useCallback((id) => {
+  const handleRemoveArticle = useCallback((id) => {
     setArticles((state) => state.filter((article) => article.id !== id));
   }, []);
 
@@ -57,15 +57,15 @@ function MyFeature() {
     <section>
       <header>
         <h1>Articles</h1>
-        <input placeholder="Title" value={title} onChange={onChangeTitle} />
+        <input placeholder="Title" value={title} onChange={handleChangeTitle} />
         <input
           placeholder="Summary"
           value={summary}
-          onChange={onChangeSummary}
+          onChange={handleChangeSummary}
         />
-        <button onClick={onClickAdd}>Add</button>
+        <button onClick={handleAddArticle}>Add</button>
       </header>
-      <ArticleList articles={articles} onClickRemove={onClickRemove} />
+      <ArticleList articles={articles} onRemove={handleRemoveArticle} />
     </section>
   );
 }
