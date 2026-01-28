@@ -3,7 +3,7 @@ import { useRef } from "react";
 const InputWithRef = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const focusInput = () => {
+  const handleFocusInput = () => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
@@ -12,7 +12,7 @@ const InputWithRef = () => {
   return (
     <div>
       <input ref={inputRef} type="text" />
-      <button onClick={focusInput}>Focus the input</button>
+      <button onClick={handleFocusInput}>Focus the input</button>
     </div>
   );
 };
