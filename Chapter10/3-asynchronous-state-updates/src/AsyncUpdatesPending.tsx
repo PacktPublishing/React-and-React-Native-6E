@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, useTransition, type ChangeEventHandler } from "react";
 
 const unfilteredItems = new Array(25000)
   .fill(null)
@@ -12,23 +12,20 @@ function filterItems(filter: string): Promise<{ id: number; name: string }[]> {
   });
 }
 
-export default function AsyncUpdates() {
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [filter, setFilter] = React.useState("");
-  const [items, setItems] = React.useState<{ id: number; name: string }[]>([]);
+export default function AsyncUpdatesPending() {
+  const [isPending, startTransition] = useTransition();
+  const [filter, setFilter] = useState("");
+  const [items, setItems] = useState<{ id: number; name: string }[]>([]);
 
-  const onChange: React.ChangeEventHandler<HTMLInputElement> = async (e) => {
+  const handleChange: ChangeEventHandler<HTMLInputElement> = async (e) => {
     setFilter(e.target.value);
-    setIsLoading(true);
 
-    React.startTransition(() => {
+    startTransition(() => {
       if (e.target.value === "") {
         setItems([]);
-        setIsLoading(false);
       } else {
         filterItems(e.target.value).then((result) => {
           setItems(result);
-          setIsLoading(false);
         });
       }
     });
@@ -41,11 +38,11 @@ export default function AsyncUpdates() {
           type="text"
           placeholder="Filter"
           value={filter}
-          onChange={onChange}
+          onChange={handleChange}
         />
       </div>
       <div>
-        {isLoading && <em>loading...</em>}
+        {isPending && <em>loading...</em>}
         <ul>
           {items.map((item) => (
             <li key={item.id}>{item.name}</li>

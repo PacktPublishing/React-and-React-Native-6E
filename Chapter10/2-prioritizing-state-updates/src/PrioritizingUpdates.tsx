@@ -1,20 +1,22 @@
-import * as React from "react";
+import { startTransition, useState, type ChangeEventHandler } from "react";
 
 const unfilteredItems = new Array(25000)
   .fill(null)
   .map((_, i) => ({ id: i, name: `Item ${i}` }));
 
 export default function PrioritizingUpdates() {
-  const [filter, setFilter] = React.useState("");
-  const [items, setItems] = React.useState<{ id: number; name: string }[]>([]);
+  const [filter, setFilter] = useState("");
+  const [items, setItems] = useState<{ id: number; name: string }[]>([]);
 
-  const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setFilter(e.target.value);
-    React.startTransition(() => {
+    startTransition(() => {
       setItems(
         e.target.value === ""
           ? []
-          : unfilteredItems.filter((item) => item.name.includes(e.target.value))
+          : unfilteredItems.filter((item) =>
+              item.name.includes(e.target.value),
+            ),
       );
     });
   };
@@ -26,7 +28,7 @@ export default function PrioritizingUpdates() {
           type="text"
           placeholder="Filter"
           value={filter}
-          onChange={onChange}
+          onChange={handleChange}
         />
       </div>
       <div>

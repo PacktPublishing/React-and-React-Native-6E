@@ -1,12 +1,13 @@
-import * as React from "react";
+import { useState } from "react";
 
 export default function BatchingUpdates() {
-  const [value, setValue] = React.useState("loading...");
+  const [value, setValue] = useState("loading...");
 
-  function onStart() {
+  function handleStart() {
     setTimeout(() => {
       for (let i = 0; i < 100; i++) {
         setValue(`value ${i + 1}`);
+        console.log(`value ${i + 1}`);
       }
     }, 1);
   }
@@ -16,7 +17,7 @@ export default function BatchingUpdates() {
       <p>
         Value: <em>{value}</em>
       </p>
-      <button onClick={onStart}>Start</button>
+      <button onClick={handleStart}>Start</button>
     </div>
   );
 }

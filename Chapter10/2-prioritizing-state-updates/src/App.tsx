@@ -1,40 +1,34 @@
-import * as React from "react";
-import AsyncUpdates from "./AsyncUpdates";
-import BatchingUpdates from "./BatchingUpdates";
+import { useReducer } from "react";
 import PrioritizingUpdates from "./PrioritizingUpdates";
+import NotPrioritizingUpdates from "./NotPrioritizingUpdates";
 
 interface State {
-  batchingUpdates: boolean;
   prioritizingUpdates: boolean;
-  asyncUpdates: boolean;
+  notPrioritizingUpdates: boolean;
 }
 
 type Action =
-  | { type: "batchingUpdates" }
   | { type: "prioritizingUpdates" }
-  | { type: "asyncUpdates" };
+  | { type: "notPrioritizingUpdates" };
 
 const initialState: State = {
-  batchingUpdates: false,
   prioritizingUpdates: false,
-  asyncUpdates: false,
+  notPrioritizingUpdates: false,
 };
 
 const reducer = (_: State, action: Action): State => {
   switch (action.type) {
-    case "batchingUpdates":
-      return { ...initialState, batchingUpdates: true };
     case "prioritizingUpdates":
       return { ...initialState, prioritizingUpdates: true };
-    case "asyncUpdates":
-      return { ...initialState, asyncUpdates: true };
+    case "notPrioritizingUpdates":
+      return { ...initialState, notPrioritizingUpdates: true };
     default:
       throw new Error(`Invalid action`);
   }
 };
 
 export default function App() {
-  let [state, dispatch] = React.useReducer(reducer, initialState);
+  let [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div>
@@ -46,10 +40,10 @@ export default function App() {
         }}
       >
         <button
-          disabled={state.batchingUpdates}
-          onClick={() => dispatch({ type: "batchingUpdates" })}
+          disabled={state.notPrioritizingUpdates}
+          onClick={() => dispatch({ type: "notPrioritizingUpdates" })}
         >
-          Batching Updates
+          Not Prioritizing Updates
         </button>
         <button
           disabled={state.prioritizingUpdates}
@@ -57,17 +51,10 @@ export default function App() {
         >
           Prioritizing Updates
         </button>
-        <button
-          disabled={state.asyncUpdates}
-          onClick={() => dispatch({ type: "asyncUpdates" })}
-        >
-          Async Updates
-        </button>
       </nav>
       <main style={{ margin: 20 }}>
-        {state.batchingUpdates && <BatchingUpdates />}
+        {state.notPrioritizingUpdates && <NotPrioritizingUpdates />}
         {state.prioritizingUpdates && <PrioritizingUpdates />}
-        {state.asyncUpdates && <AsyncUpdates />}
       </main>
     </div>
   );
