@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { GitHubUser } from "./GitHubUser";
 import UserInfo from "./UserInfo";
-import api from "./api";
+import { getUserProfile } from "./api";
 
 function App() {
   const [user, setUser] = useState<GitHubUser>();
@@ -10,8 +10,7 @@ function App() {
   useEffect(() => {
     setLoading(true);
 
-    api
-      .getProfile("sakhnyuk")
+    getUserProfile("sakhnyuk")
       .then((res) => setUser(res.data))
       .finally(() => setLoading(false));
   }, []);
