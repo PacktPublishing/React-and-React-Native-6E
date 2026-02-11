@@ -4,13 +4,13 @@ export async function generateStaticParams() {
 
 export const revalidate = 3600;
 
-export default async function Post({ params }: { params: { post: string } }) {
+export default async function Post({ params }: { params: Promise<{ post: string }> }) {
+  const { post } = await params;
   return (
     <main>
-      <h1>Post - {params.post}</h1>
+      <h1>Post - {post}</h1>
       <p>
-        This is a dynamic route example. The value of the post parameter is
-        {params.post}.
+        This is a dynamic route example. The value of the post parameter is {post}.
       </p>
     </main>
   );
