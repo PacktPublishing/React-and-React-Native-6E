@@ -1,4 +1,5 @@
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import Image from "next/image";
 
 export interface GitHubUser {
   login: string;
@@ -25,7 +26,7 @@ export default function About({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <main>
-      <img src={user.avatar_url} alt={user.login} width="100" height="100" />
+      <Image src={user.avatar_url} alt={user.login} width={100} height={100} />
       <h2>{user.name || user.login}</h2>
       <p>{user.bio}</p>
       <p>Location: {user.location || "Not specified"}</p>
