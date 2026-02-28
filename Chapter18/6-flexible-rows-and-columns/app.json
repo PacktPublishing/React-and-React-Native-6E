@@ -3,7 +3,7 @@
     "name": "flexible-rows-and-columns",
     "slug": "flexible-rows-and-columns",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

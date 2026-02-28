@@ -14,8 +14,8 @@ export default StyleSheet.create({
   },
 
   box: {
-    height: 100,
     width: 100,
+    height: 50,
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 1,
