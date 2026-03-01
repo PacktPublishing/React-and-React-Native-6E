@@ -21,7 +21,7 @@ export default function App() {
         </Tab.Navigator>
       )}
 
-      {Platform.OS == "android" && (
+      {Platform.OS === "android" && (
         <Drawer.Navigator>
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="News" component={News} />

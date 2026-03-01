@@ -11,7 +11,7 @@ export default function Details({ route, navigation }: Props) {
 
   React.useEffect(() => {
     navigation.setOptions({ title });
-  }, []);
+  }, [navigation, title]);
 
   return (
     <View style={styles.container}>

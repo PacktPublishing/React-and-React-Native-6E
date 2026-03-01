@@ -6,7 +6,7 @@ import { RootStackParamList } from "./router";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Details">;
 
-export default function ({ route }: Props) {
+export default function Details ({ route }: Props) {
   const { title } = route.params;
 
   return (
