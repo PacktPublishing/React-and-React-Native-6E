@@ -5,23 +5,14 @@ import styles from "./styles";
 type Props = {
   data: { key: string; value: string }[];
   fetchItems: () => Promise<void>;
-  refreshItems: () => Promise<void>;
-  isRefreshing: boolean;
 };
 
-export default function List({
-  data,
-  fetchItems,
-  refreshItems,
-  isRefreshing,
-}: Props) {
+export default function List({ data, fetchItems }: Props) {
   return (
     <FlatList
       data={data}
       renderItem={({ item }) => <Text style={styles.item}>{item.value}</Text>}
       onEndReached={fetchItems}
-      onRefresh={refreshItems}
-      refreshing={isRefreshing}
     />
   );
 }

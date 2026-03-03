@@ -19,27 +19,18 @@ export default function ListContainer() {
       .then(({ items }) => {
         setData(mapItems(items));
       });
-  }, []);
+  }, [filter, asc]);
 
   return (
     <List
       data={data}
       asc={asc}
       onFilter={(text) => {
-        fetchItems(text, asc)
-          .then((resp) => resp.json())
-          .then(({ items }) => {
-            setFilter(text);
-            setData(mapItems(items));
-          });
+        setFilter(text);
       }}
       onSort={() => {
-        fetchItems(filter, !asc)
-          .then((resp) => resp.json())
-          .then(({ items }) => {
-            setAsc(!asc);
-            setData(mapItems(items));
-          });
+        setAsc(!asc);
+        ;
       }}
     />
   );

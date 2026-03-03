@@ -4,51 +4,22 @@ import List from "./List";
 
 export default function ListContainer() {
   const [data, setData] = useState<{ key: string; value: string }[]>([]);
-  const [isRefreshing, setIsRefreshing] = useState(false);
 
-  function fetchItems() {
+  function loadItems() {
     return api
       .fetchItems({})
       .then((resp) => resp.json())
       .then(({ items }) => {
-        setData([
-          ...data,
-          ...items.map((value) => ({
-            key: value,
-            value,
-          })),
+        setData((prev) => [
+          ...prev,
+          ...items.map((value) => ({ key: value, value })),
         ]);
       });
   }
 
-  function refreshItems() {
-    setIsRefreshing(true);
-    return api
-      .fetchItems({ refresh: true })
-      .then((resp) => resp.json())
-      .then(({ items }) => {
-        setData(
-          items.map((value) => ({
-            key: value,
-            value,
-          }))
-        );
-      })
-      .finally(() => {
-        setIsRefreshing(false);
-      });
-  }
-
   useEffect(() => {
-    fetchItems();
+    loadItems();
   }, []);
 
-  return (
-    <List
-      data={data}
-      fetchItems={fetchItems}
-      refreshItems={refreshItems}
-      isRefreshing={isRefreshing}
-    />
-  );
+  return <List data={data} fetchItems={loadItems} />;
 }
