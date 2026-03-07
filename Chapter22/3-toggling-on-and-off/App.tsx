@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 import styles from "./styles";
-import Switch from "./Switch";
+import CustomSwitch from "./Switch";
 
 export default function TogglingOnAndOff() {
   const [first, setFirst] = useState(false);
@@ -9,13 +9,13 @@ export default function TogglingOnAndOff() {
 
   return (
     <View style={styles.container}>
-      <Switch
+      <CustomSwitch
         label="Disable Next Switch"
         value={first}
         disabled={second}
         onValueChange={setFirst}
       />
-      <Switch
+      <CustomSwitch
         label="Disable Previous Switch"
         value={second}
         disabled={first}
