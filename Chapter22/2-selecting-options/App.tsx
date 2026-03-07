@@ -33,11 +33,11 @@ export default function SelectingOptions() {
           label="Size"
           items={sizes}
           selectedValue={selectedSize}
-          onValueChange={(size: string) => {
-            setSelectedSize(size);
+          onValueChange={(size) => {
+            setSelectedSize(size as string | null);
             setSelectedGarment(null);
             setAvailableGarments(
-              garments.filter((i) => i.sizes.includes(size))
+              garments.filter((i) => typeof size === "string" && i.sizes.includes(size))
             );
           }}
         />
@@ -45,8 +45,8 @@ export default function SelectingOptions() {
           label="Garment"
           items={availableGarments}
           selectedValue={selectedGarment}
-          onValueChange={(garment: number) => {
-            setSelectedGarment(garment);
+          onValueChange={(garment) => {
+            setSelectedGarment(garment as number | null);
           }}
         />
       </View>
