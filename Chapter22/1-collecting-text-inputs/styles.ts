@@ -10,7 +10,7 @@ export default StyleSheet.create({
 
   textInputContainer: {
     alignSelf: "stretch",
-    marginBottom: 30,
+    marginBottom: 10,
   },
 
   textInputLabel: {
@@ -19,7 +19,9 @@ export default StyleSheet.create({
 
   textInput: {
     backgroundColor: "white",
-    height: 20,
-    fontSize: 11,
+    color: "black",
+    height: 40,
+    fontSize: 14,
+    paddingHorizontal: 8,
   },
 });
