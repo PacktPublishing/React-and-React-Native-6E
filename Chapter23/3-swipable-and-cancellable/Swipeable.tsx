@@ -27,7 +27,7 @@ export default function Swipeable({ name, width, onSwipe }: SwipeableProps) {
         snapToInterval={width}
         showsHorizontalScrollIndicator={false}
         scrollEventThrottle={10}
-        onScroll={onScroll}
+        onMomentumScrollEnd={onScroll}
       >
         <View style={[styles.swipeItem, { width }]}>
           <Text style={styles.swipeItemText}>{name}</Text>

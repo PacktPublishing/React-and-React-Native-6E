@@ -3,17 +3,16 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "ghostwhite",
   },
 
   swipeContainer: {
-    flex: 1,
     flexDirection: "row",
     width: 200,
     height: 30,
-    marginTop: 50,
+    marginTop: 30,
   },
 
   swipeItem: {
