@@ -8,7 +8,7 @@ const PressableButton = () => {
   return (
     <Pressable
       onPressIn={() => setText("Pressed")}
-      onPressOut={() => setText("Press")}
+      onPressOut={() => setText("Not Pressed")}
       onLongPress={() => {
         setText("Long Pressed");
       }}

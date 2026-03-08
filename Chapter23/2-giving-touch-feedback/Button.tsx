@@ -6,7 +6,10 @@ type ButtonProps = {
   label: string;
   onPress: () => void;
 };
-
+/* TouchableOpacity and TouchableHighlight components are legacy.
+   React Native documentation recommends Pressable API.
+   It is being shown here for demonstration purposes.    
+*/
 export const OpacityButton = ({ label, onPress }: ButtonProps) => {
   return (
     <TouchableOpacity
