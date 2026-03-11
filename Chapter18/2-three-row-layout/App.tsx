@@ -1,10 +1,11 @@
 import React from "react";
 import { Text, View } from "react-native";
 import styles from "./styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.box}>
         <Text style={styles.boxText}>#1</Text>
       </View>
@@ -14,6 +15,6 @@ export default function App() {
       <View style={styles.box}>
         <Text style={styles.boxText}>#3</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }

@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "babel-preset-expo": "^55.0.10",
-    "expo": "~55.0.4",
+    "expo": "~55.0.5",
     "expo-status-bar": "~55.0.4",
     "react": "19.2.0",
-    "react-native": "0.83.2"
+    "react-native": "0.83.2",
+    "react-native-safe-area-context": "~5.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

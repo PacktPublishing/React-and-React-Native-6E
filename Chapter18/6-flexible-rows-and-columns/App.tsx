@@ -1,14 +1,14 @@
 import React from "react";
-import { View, StatusBar } from "react-native";
+import { View } from "react-native";
 import styles from "./styles";
 import Row from "./Row";
 import Column from "./Column";
 import Box from "./Box";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar hidden={false} />
+    <SafeAreaView style={styles.container}>
       <Row>
         <Column>
           <Box>#1</Box>
@@ -39,6 +39,6 @@ export default function App() {
           <Box>#12</Box>
         </Column>
       </Row>
-    </View>
+    </SafeAreaView>
   );
 }
