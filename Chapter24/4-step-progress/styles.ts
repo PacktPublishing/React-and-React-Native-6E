@@ -16,6 +16,7 @@ export default StyleSheet.create({
     flex: 1,
     fontSize: 16,
     fontWeight: "bold",
+    textAlign: "center",
   },
 
   content: {
@@ -25,7 +26,7 @@ export default StyleSheet.create({
 
   progress: {
     justifyContent: "center",
-    alignItems: "center",
+    width: "60%",
     padding: 1,
   },
 });
