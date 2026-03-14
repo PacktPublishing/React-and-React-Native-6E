@@ -23,8 +23,7 @@ const routes = [
 
 function App() {
   return (
-    <PaperProvider>
-      <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 }}>
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={({ route, navigation }) => {
@@ -76,8 +75,7 @@ function App() {
 
           </Stack.Navigator>
         </NavigationContainer>
-      </SafeAreaView>
-    </PaperProvider>
+    </SafeAreaView>
   );
 }
 

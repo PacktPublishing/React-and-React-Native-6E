@@ -10,9 +10,10 @@ export function LoadingWrapper({ children }: Props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const id = setTimeout(() => {
       setLoading(false);
     }, 1000);
+    return () => clearTimeout(id);
   }, []);
 
   if (loading) {
