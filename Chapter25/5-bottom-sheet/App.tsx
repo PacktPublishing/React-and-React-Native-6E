@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
-import { Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, FlatList, Pressable, StyleSheet } from "react-native";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetView,
@@ -51,10 +51,10 @@ export default function App() {
         data={products}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.row} onPress={() => handleOpen(item)}>
+          <Pressable style={styles.row} onPress={() => handleOpen(item)}>
             <Text style={styles.rowName}>{item.name}</Text>
             <Text style={styles.rowPrice}>{item.price}</Text>
-          </TouchableOpacity>
+          </Pressable>
         )}
       />
       <BottomSheet
@@ -68,9 +68,9 @@ export default function App() {
           <Text style={styles.sheetTitle}>{selected.name}</Text>
           <Text style={styles.sheetPrice}>{selected.price}</Text>
           <Text style={styles.sheetDescription}>{selected.description}</Text>
-          <TouchableOpacity style={styles.addButton}>
+          <Pressable style={styles.addButton}>
             <Text style={styles.addButtonText}>Add to Cart</Text>
-          </TouchableOpacity>
+          </Pressable>
         </BottomSheetView>
       </BottomSheet>
     </GestureHandlerRootView>
