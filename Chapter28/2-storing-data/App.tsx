@@ -3,12 +3,11 @@ import { Text, TextInput, View, FlatList } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "./styles";
 import { Button } from "./Button";
-import { KeyValuePair } from "@react-native-async-storage/async-storage/lib/typescript/types";
 
 export default function App() {
   const [key, setKey] = useState("");
   const [value, setValue] = useState("");
-  const [source, setSource] = useState<KeyValuePair[]>([]);
+  const [source, setSource] = useState<[string, string | null][]>([]);
 
   function setItem() {
     return AsyncStorage.setItem(key, value)
@@ -61,6 +60,7 @@ export default function App() {
             key: key.toString(),
             value,
           }))}
+          keyExtractor={(item) => item.key}
           renderItem={({ item: { value, key } }) => (
             <Text>
               {value} ({key})

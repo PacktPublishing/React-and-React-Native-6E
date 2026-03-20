@@ -16,14 +16,14 @@ const connectedMap = {
 } as const;
 
 export default function App() {
-  const [connected, setConnected] = useState("");
+  const [connected, setConnected] = useState<string | null>(null);
 
   useEffect(() => {
     function onNetworkChange(connection: NetInfoState) {
-      const type = connection.type;
-      setConnected(connectedMap[type]);
+      setConnected(connectedMap[connection.type]);
     }
 
+    NetInfo.fetch().then(onNetworkChange);
     const unsubscribe = NetInfo.addEventListener(onNetworkChange);
 
     return () => {

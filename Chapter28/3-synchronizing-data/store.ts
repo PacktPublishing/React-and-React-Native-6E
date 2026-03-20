@@ -40,23 +40,17 @@ export function get(key?: Key): Promise<boolean | typeof fakeNetworkData> {
     } else {
       AsyncStorage.getAllKeys()
         .then((keys) =>
-          AsyncStorage.multiGet(keys).then((items) =>
-            resolve(Object.fromEntries(items) as any)
-          )
+          AsyncStorage.multiGet(keys).then((items) => {
+            const result = Object.fromEntries(
+              items.map(([k, v]) => [k, v === "true"])
+            ) as typeof fakeNetworkData;
+            resolve(result);
+          })
         )
         .catch((err) => reject(err));
     }
   });
 }
-
-NetInfo.fetch().then(
-  (connection) => {
-    connected = ["wifi", "unknown"].includes(connection.type);
-  },
-  () => {
-    connected = false;
-  }
-);
 
 NetInfo.addEventListener((connection) => {
   connected = ["wifi", "unknown"].includes(connection.type);
@@ -64,7 +58,7 @@ NetInfo.addEventListener((connection) => {
   if (connected && unsynced.length) {
     AsyncStorage.multiGet(unsynced).then((items) => {
       items.forEach(([key, val]) => set(key as Key, val === "true"));
-      unsynced.length = 0;
+      unsynced.splice(0);
     });
   }
 });

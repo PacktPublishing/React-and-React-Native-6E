@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { Text, Pressable } from "react-native";
 import styles from "./styles";
 
 type ButtonProps = {
@@ -9,12 +9,8 @@ type ButtonProps = {
 
 export const Button = ({ label, onPress }: ButtonProps) => {
   return (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={onPress}
-      activeOpacity={0.5}
-    >
+    <Pressable style={styles.button} onPress={onPress}>
       <Text style={styles.buttonText}>{label}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 };

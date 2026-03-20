@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Text, View, Switch } from "react-native";
 import NetInfo from "@react-native-community/netinfo";
 import styles from "./styles";
@@ -9,11 +9,16 @@ export default function App() {
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);
-  const setters = new Map([
-    ["first", setFirst],
-    ["second", setSecond],
-    ["third", setThird],
-  ]);
+  
+  const setters = useMemo(
+    () =>
+      new Map([
+        ["first", setFirst],
+        ["second", setSecond],
+        ["third", setThird],
+      ]),
+    []
+  );
 
   function save(key: Key) {
     return (value: boolean) => {
@@ -33,7 +38,7 @@ export default function App() {
     NetInfo.fetch().then(() =>
       get().then(
         (items) => {
-          for (let [key, value] of Object.entries(items)) {
+          for (const [key, value] of Object.entries(items)) {
             setters.get(key)?.(value);
           }
         },
