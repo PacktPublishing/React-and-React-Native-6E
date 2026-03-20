@@ -1,5 +1,5 @@
 export const iconNames = {
-  web_app_icons: [
+  "Web App Icons": [
     "adjust",
     "american-sign-language-interpreting",
     "anchor",
@@ -26,7 +26,7 @@ export const iconNames = {
     "beer",
     "bell",
   ],
-  a11y: [
+  "Accessibility Icons": [
     "american-sign-language-interpreting",
     "assistive-listening-systems",
     "audio-description",
@@ -43,7 +43,7 @@ export const iconNames = {
     "wheelchair",
     "wheelchair-alt",
   ],
-  hand: [
+  "Hand Icons": [
     "hand-lizard-o",
     "hand-o-down",
     "hand-o-left",

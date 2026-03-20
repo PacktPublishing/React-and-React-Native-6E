@@ -20,4 +20,9 @@ export default StyleSheet.create({
   buttonText: {
     color: "slategrey",
   },
+  image: {
+    resizeMode: "contain",
+    width: 150,
+    height: 150,
+  },
 });

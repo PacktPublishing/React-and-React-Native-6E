@@ -2,7 +2,7 @@ import React from "react";
 import { View, Image } from "react-native";
 import styles from "./styles";
 
-const reactLogo = "https://reactnative.dev/docs/assets/favicon.png";
+const reactLogo = "https://reactjs.org/logo-og.png";
 const relayLogo = require("./assets/relay.png");
 
 export default function App() {

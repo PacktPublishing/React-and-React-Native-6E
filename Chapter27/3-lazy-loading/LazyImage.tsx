@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
-  View,
   Image,
-  ImageProps,
+  ImageSourcePropType,
   ImageStyle,
   StyleProp,
-  ImageSourcePropType,
+  StyleSheet,
+  View
 } from "react-native";
 
 const placeholder = require("./assets/placeholder.png");
@@ -25,26 +25,23 @@ function Placeholder({ loaded, style }: PlaceholderProps) {
 
 type Props = {
   style: StyleProp<ImageStyle>;
-  resizeMode: ImageProps["resizeMode"];
   source: ImageSourcePropType | null;
 };
 
-export default function LazyImage({ style, resizeMode, source }: Props) {
+export default function LazyImage({ style, source }: Props) {
   const [loaded, setLoaded] = useState(false);
 
   return (
     <View style={style}>
-      {!!source ? (
+      <Placeholder loaded={loaded} style={style} />
+      {!!source && (
         <Image
           source={source}
-          resizeMode={resizeMode}
-          style={style}
+          style={[StyleSheet.absoluteFill]}
           onLoad={() => {
             setLoaded(true);
           }}
         />
-      ) : (
-        <Placeholder loaded={loaded} style={style} />
       )}
     </View>
   );

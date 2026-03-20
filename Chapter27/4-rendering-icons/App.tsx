@@ -1,44 +1,32 @@
-import React, { useState, useEffect } from "react";
-import { View, FlatList, Text } from "react-native";
-import { Picker } from "@react-native-picker/picker";
+import React from "react";
+import { View, Text, SectionList } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "@expo/vector-icons/FontAwesome";
 import styles from "./styles";
-import { iconNames, IconsType, IconName } from "./icon-names";
+import { iconNames, IconName } from "./icon-names";
+
+const sections = Object.entries(iconNames).map(([title, data]) => ({
+  title,
+  data: Array.from(data) as IconName[],
+}));
 
 export default function RenderingIcons() {
-  const [selected, setSelected] = useState<IconsType>("web_app_icons");
-  const [listSource, setListSource] = useState<IconName[]>([]);
-  const categories = Object.keys(iconNames);
-
-  function updateListSource(selected: IconsType) {
-    const listSource = iconNames[selected] as any;
-    setListSource(listSource);
-    setSelected(selected);
-  }
-
-  useEffect(() => {
-    updateListSource(selected);
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <View style={styles.picker}>
-        <Picker selectedValue={selected} onValueChange={updateListSource}>
-          {categories.map((category) => (
-            <Picker.Item key={category} label={category} value={category} />
-          ))}
-        </Picker>
-      </View>
-      <FlatList
+    <SafeAreaView style={styles.container}>
+      <SectionList
         style={styles.icons}
-        data={listSource.map((value, key) => ({ key: key.toString(), value }))}
+        sections={sections}
+        keyExtractor={(item) => item}
+        renderSectionHeader={({ section }) => (
+          <Text style={styles.sectionHeader}>{section.title}</Text>
+        )}
         renderItem={({ item }) => (
           <View style={styles.item}>
-            <Icon name={item.value} style={styles.itemIcon} />
-            <Text style={styles.itemText}>{item.value}</Text>
+            <Icon name={item} style={styles.itemIcon} />
+            <Text style={styles.itemText}>{item}</Text>
           </View>
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 }

@@ -4,7 +4,7 @@ import styles from "./styles";
 import LazyImage from "./LazyImage";
 import Button from "./Button";
 
-const remote = "https://reactnative.dev/docs/assets/favicon.png";
+const remote = "https://reactjs.org/logo-og.png";
 
 export default function LazyLoading() {
   const [source, setSource] = useState<ImageSourcePropType | null>(null);
@@ -12,8 +12,7 @@ export default function LazyLoading() {
   return (
     <View style={styles.container}>
       <LazyImage
-        style={{ width: 200, height: 150 }}
-        resizeMode="contain"
+        style={styles.image}
         source={source}
       />
       <Button

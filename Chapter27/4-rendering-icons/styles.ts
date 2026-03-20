@@ -3,18 +3,19 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
     backgroundColor: "ghostwhite",
-  },
-
-  picker: {
-    height: 200,
-    width: 300,
-    marginTop: 20,
   },
 
   icons: {
     alignSelf: "stretch",
+  },
+
+  sectionHeader: {
+    padding: 10,
+    backgroundColor: "ghostwhite",
+    color: "slategrey",
+    fontWeight: "bold",
+    textTransform: "capitalize",
   },
 
   item: {
