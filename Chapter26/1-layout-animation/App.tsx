@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, View } from "react-native";
 import { TodoItem, Todo } from "./TodoItem";
 import { styles } from "./styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   const [todoList, setTodoList] = useState<Todo[]>([]);
@@ -18,13 +19,13 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={{ flex: 1 }}>
         {todoList.map(({ id, title }) => (
           <TodoItem key={id} id={id} title={title} onPress={deleteTask} />
         ))}
       </View>
       <Button onPress={addTask} title="Add" />
-    </View>
+    </SafeAreaView>
   );
 }

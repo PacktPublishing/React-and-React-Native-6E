@@ -1,4 +1,3 @@
-import React from "react";
 import { Text, View, Pressable } from "react-native";
 import Animated, {
   interpolateColor,
@@ -26,7 +25,7 @@ const App = () => {
       transform: [{ scale: scale.value }],
       backgroundColor: backgroundColor.value,
     };
-  }, []);
+  });
 
   const onPressIn = () => {
     radius.value = withSpring(20);
