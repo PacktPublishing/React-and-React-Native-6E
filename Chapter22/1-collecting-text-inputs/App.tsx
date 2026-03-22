@@ -6,11 +6,11 @@ type InputProps = TextInputProps & {
   label: string;
 };
 
-function Input(props: InputProps) {
+function Input({ label, ...rest }: InputProps) {
   return (
     <View style={styles.textInputContainer}>
-      <Text style={styles.textInputLabel}>{props.label}</Text>
-      <TextInput style={styles.textInput} {...props} />
+      <Text style={styles.textInputLabel}>{label}</Text>
+      <TextInput style={styles.textInput} {...rest} />
     </View>
   );
 }
