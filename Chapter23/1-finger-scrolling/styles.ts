@@ -14,7 +14,7 @@ export default StyleSheet.create({
   },
 
   scroll: {
-    height: 1,
+    flex: 1,
     alignSelf: "stretch",
   },
 
