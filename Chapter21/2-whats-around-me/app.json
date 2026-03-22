@@ -21,10 +21,14 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.whatsaroundme"
     },
-    "web": {
+"web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      ["expo-location", { "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location." }]
+    ]
   }
 }

@@ -1,15 +1,15 @@
-import React from "react";
-import { View, StatusBar } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import { View } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import styles from "./styles";
-
-StatusBar.setBarStyle("dark-content");
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <StatusBar style="dark" />
       <MapView
         style={styles.mapView}
+        provider={PROVIDER_GOOGLE}
         showsPointsOfInterest={false}
         showsUserLocation
         followsUserLocation

@@ -1,12 +1,23 @@
-import React from "react";
-import { View, StatusBar } from "react-native";
+import { useEffect } from "react";
+import { View } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import * as Location from "expo-location";
 import MapView from "react-native-maps";
 import styles from "./styles";
 
-StatusBar.setBarStyle("dark-content");
+export default function App() {
+  useEffect(() => {
+    Location.requestForegroundPermissionsAsync();
+  }, []);
 
-export default () => (
-  <View style={styles.container}>
-    <MapView style={styles.mapView} showsUserLocation followsUserLocation />
-  </View>
-);
+  return (
+    <View style={styles.container}>
+      <StatusBar style="dark" />
+      <MapView
+        style={styles.mapView}
+        showsUserLocation
+        followsUserLocation
+      />
+    </View>
+  );
+}

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { View, Text, StatusBar } from "react-native";
-import MapView, { Polygon } from "react-native-maps";
+import { useState } from "react";
+import { View, Text } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import MapView, { Polygon, PROVIDER_GOOGLE } from "react-native-maps";
 import styles from "./styles";
-
-StatusBar.setBarStyle("dark-content");
 
 type Overlay = {
   coordinates: { latitude: number; longitude: number }[];
@@ -36,37 +35,39 @@ const stoutRegion: Overlay = {
 };
 
 export default function PlottingOverlays() {
-  const [ipaStyles, setIpaStyles] = useState<any>([
-    styles.ipaText,
-    styles.boldText,
-  ]);
-  const [stoutStyles, setStoutStyles] = useState<any>([styles.stoutText]);
+  const [selected, setSelected] = useState<"ipa" | "stout">("ipa");
   const [overlays, setOverlays] = useState<Overlay[]>([ipaRegion]);
 
   function onClickIpa() {
-    setIpaStyles([...ipaStyles, styles.boldText]);
-    setStoutStyles([stoutStyles[0]]);
+    setSelected("ipa");
     setOverlays([ipaRegion]);
   }
 
   function onClickStout() {
-    setStoutStyles([...stoutStyles, styles.boldText]);
-    setIpaStyles([ipaStyles[0]]);
+    setSelected("stout");
     setOverlays([stoutRegion]);
   }
 
   return (
     <View style={styles.container}>
+      <StatusBar style="dark" />
       <View>
-        <Text style={ipaStyles} onPress={onClickIpa}>
+        <Text
+          style={[styles.ipaText, selected === "ipa" && styles.boldText]}
+          onPress={onClickIpa}
+        >
           IPA Fans
         </Text>
-        <Text style={stoutStyles} onPress={onClickStout}>
+        <Text
+          style={[styles.stoutText, selected === "stout" && styles.boldText]}
+          onPress={onClickStout}
+        >
           Stout Fans
         </Text>
       </View>
       <MapView
         style={styles.mapView}
+        provider={PROVIDER_GOOGLE}
         showsPointsOfInterest={false}
         initialRegion={{
           latitude: 43.8486744,

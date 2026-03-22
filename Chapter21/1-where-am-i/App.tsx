@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Text, View } from "react-native";
 import * as Location from "expo-location";
 import styles from "./styles";
-
-const API_KEY = "";
-const URL = `https://maps.google.com/maps/api/geocode/json?key=${API_KEY}&latlng=`;
 
 export default function WhereAmI() {
   const [address, setAddress] = useState("loading...");
@@ -12,33 +9,32 @@ export default function WhereAmI() {
   const [latitude, setLatitude] = useState<number | undefined>();
 
   useEffect(() => {
-    function setPosition({
-      coords: { latitude, longitude },
-    }: Location.LocationObject) {
-      setLongitude(longitude);
-      setLatitude(latitude);
+    async function setPosition({ coords }: Location.LocationObject) {
+      setLongitude(coords.longitude);
+      setLatitude(coords.latitude);
 
-      fetch(`${URL}${latitude},${longitude}`)
-        .then((resp) => resp.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            setAddress(results[0].formatted_address);
-          }
-        })
-        .catch((error) => {
-          console.log(error.message);
-        });
+      const [result] = await Location.reverseGeocodeAsync(coords);
+      if (result) {
+        const parts = [
+          result.name,
+          result.street,
+          result.city,
+          result.region,
+          result.country,
+        ];
+        setAddress(parts.filter(Boolean).join(", "));
+      }
     }
 
     let watcher: Location.LocationSubscription;
 
     (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
+      const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
         return;
       }
 
-      let location = await Location.getCurrentPositionAsync({});
+      const location = await Location.getCurrentPositionAsync({});
       setPosition(location);
 
       watcher = await Location.watchPositionAsync(
