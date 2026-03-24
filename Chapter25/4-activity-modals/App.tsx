@@ -5,21 +5,17 @@ import Activity from "./Activity";
 
 export default function App() {
   const [fetching, setFetching] = useState(false);
-  const [promise, setPromise] = useState(Promise.resolve());
 
-  function onPress() {
-    setPromise(
-      new Promise((resolve) => setTimeout(resolve, 3000)).then(() => {
-        setFetching(false);
-      })
-    );
+  async function fetchStuff() {
     setFetching(true);
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    setFetching(false);
   }
 
   return (
     <View style={styles.container}>
       <Activity visible={fetching} />
-      <Text onPress={onPress}>Fetch Stuff...</Text>
+      <Text onPress={fetchStuff}>Fetch Stuff...</Text>
     </View>
   );
 }
