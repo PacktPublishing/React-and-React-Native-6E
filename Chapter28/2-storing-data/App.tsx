@@ -56,14 +56,14 @@ export default function App() {
       </View>
       <View style={styles.list}>
         <FlatList
-          data={source.map(([key, value]) => ({
-            key: key.toString(),
-            value,
+          data={source.map(([itemKey, itemValue]) => ({
+            key: itemKey,
+            value: itemValue,
           }))}
           keyExtractor={(item) => item.key}
-          renderItem={({ item: { value, key } }) => (
+          renderItem={({ item }) => (
             <Text>
-              {value} ({key})
+              {item.value} ({item.key})
             </Text>
           )}
         />
