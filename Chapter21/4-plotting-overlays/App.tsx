@@ -68,7 +68,7 @@ export default function PlottingOverlays() {
       <MapView
         style={styles.mapView}
         provider={PROVIDER_GOOGLE}
-        showsPointsOfInterest={false}
+        showsPointsOfInterests={false}
         initialRegion={{
           latitude: 43.8486744,
           longitude: -79.0695283,

@@ -10,7 +10,7 @@ export default function App() {
       <MapView
         style={styles.mapView}
         provider={PROVIDER_GOOGLE}
-        showsPointsOfInterest={false}
+        showsPointsOfInterests={false}
         showsUserLocation
         followsUserLocation
       >
