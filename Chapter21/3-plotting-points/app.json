@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "experiments": {
+      "reactCompiler": true
+    },
     "ios": {
       "supportsTablet": true
     },

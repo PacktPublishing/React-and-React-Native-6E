@@ -9,12 +9,11 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "babel-preset-expo": "~55.0.8",
-    "expo": "^55.0.8",
+    "expo": "~55.0.9",
     "expo-location": "~55.1.4",
     "expo-status-bar": "~55.0.4",
     "react": "19.2.0",
-    "react-native": "0.83.2",
+    "react-native": "0.83.4",
     "react-native-maps": "1.27.2"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { View, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import MapView, { Polygon, PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { Polygon } from "react-native-maps";
 import styles from "./styles";
 
 type Overlay = {
@@ -67,7 +67,6 @@ export default function PlottingOverlays() {
       </View>
       <MapView
         style={styles.mapView}
-        provider={PROVIDER_GOOGLE}
         showsPointsOfInterests={false}
         initialRegion={{
           latitude: 43.8486744,
