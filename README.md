@@ -1,70 +1,125 @@
-# React and React Native, Sixth Edition
-This is the code repository for [React and React Native, Sixth Edition](#), published by Packt.
+<a href="https://www.packtpub.com/en-us/unlock"><img src="https://drive.google.com/uc?export=view&id=1lQCTQQ8iV5pGuPA1n5wuds-3pwJi0OD_"></a>
+<h1 align="center">
+React and React Native, Sixth Edition</h1>
+<p align="center">This is the code repository for <a href ="https://www.packtpub.com/en-us/product/react-and-react-native-sixth-edition/9781837020294"> React and React Native, Sixth Edition</a>, published by Packt.
+</p>
 
-**Build cross-platform JavaScript and TypeScript apps for the web, desktop, and mobile**
+<h2 align="center">
+Build cross-platform JavaScript and TypeScript apps for web and mobile
+</h2>
 
-The authors of this book are - [Mikhail Sakhniuk](https://www.linkedin.com/in/m-sakhniuk), [Adam Boduch](https://ca.linkedin.com/in/boduch), and [Rodrigo Lobenwein](https://www.linkedin.com/in/rodrigolobenwein)
+<p align="center">
+<a href="https://www.linkedin.com/in/m-sakhniuk">Mikhail Sakhniuk</a>, <a href="https://www.linkedin.com/in/rodrigolobenwein">Rodrigo Lobenwein</a>, and <a href="https://ca.linkedin.com/in/boduch">Adam Boduch</a>
+</p>
 
-## About the book
+<p align="center">
+  <a href="https://packt.link/free-ebook/9781837020294"><img width="32px" alt="Free PDF" title="Free PDF" src="https://cdn-icons-png.flaticon.com/512/4726/4726010.png"/></a>
+ &#8287;&#8287;&#8287;&#8287;&#8287;
+  <a href="https://packt.link/gbp/9781837020294"><img width="32px" alt="Graphic Bundle" title="Graphic Bundle" src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png"/></a>
+  &#8287;&#8287;&#8287;&#8287;&#8287;
+   <a href="https://www.amazon.com/React-Native-cross-platform-JavaScript-TypeScript/dp/1837020299/"><img width="32px" alt="Amazon" title="Get your copy" src="https://cdn-icons-png.flaticon.com/512/15466/15466027.png"/></a>
+  &#8287;&#8287;&#8287;&#8287;&#8287;
+</p>
 
+<details open> 
+  <summary><h2>About the book</summary>
+<a href="https://www.packtpub.com/en-us/product/react-and-react-native-sixth-edition/9781837020294">
+<img src="https://content.packt.com/B33140/cover_image_small.jpg" alt="React and React Native, Sixth Edition" height="256px" align="right">
+</a>
+    
 Welcome to your big-picture guide to the React ecosystem.
 
-If you're new to React and looking to become a professional React developer, this book is for you. This updated sixth edition reflects the current state of React 19, including the latest hooks, server-side rendering with Next.js 15, and React Native with Expo.
+If you’re new to React and looking to become a professional React developer, this book is for you. This updated sixth edition reflects the current state of React, including coverage of React frameworks and TypeScript.
 
-Part 1 introduces you to React. You'll discover JSX syntax, hooks, functional components, and event handling, learn techniques to fetch data from a server, and tackle the tricky problem of state management. Once you're comfortable with writing React in JavaScript, you'll pick up TypeScript development in later chapters.
+_Part 1_ introduces you to React. You’ll discover JSX syntax, hooks, functional components, and event handling, learn techniques to fetch data from a server, and tackle the tricky problem of state management. Once you’re comfortable with writing React in JavaScript, you’ll pick up TypeScript development in later chapters.
 
-Part 2 transitions you into React Native for mobile development. React Native goes hand-in-hand with React. With your React knowledge behind you, you'll appreciate where and how React Native differs as you write shared components for Android and iOS apps. You'll learn how to build responsive layouts, use animations, and implement geolocation.
+_Part 2_ transitions you into React Native for mobile development. React Native goes hand-in-hand with React. With your React knowledge in place, you’ll appreciate where and how React Native differs as you write shared components for Android and iOS apps. You’ll learn how to build responsive layouts, use animations, and implement geolocation.
 
-By the end of this book, you'll have a big-picture view of React and React Native and be able to build applications with both.
+Finally, a new chapter shows you how to use AI as a learning partner, covering practical workflows for AI-assisted debugging, evaluating AI-generated code, recognizing common pitfalls in React and React Native output, and writing code deliberately to deepen your understanding.
 
-## Key Takeaways
+By the end of this book, you’ll have a big-picture view of React and React Native, and be able to build applications with both.
+
+## Key takeaways
 - Explore React architecture, component properties, state, and context
 - Work with React Hooks for handling functions and components
-- Fetch data from a server using the Fetch API, Axios, and React Query
+- Fetch data from a server using the Fetch API, GraphQL, and WebSockets
 - Dive into internal and external state management strategies
-- Build robust user interfaces for mobile and desktop apps using Material-UI
-- Perform unit testing for your components with Vitest and mocking
+- Build robust user interfaces (UIs) for web apps using Material-UI
+- Perform unit testing for your components with Vitest and mocking techniques
 - Manage app performance with server-side rendering, lazy components, and Suspense
-- Build cross-platform mobile apps with React Native and Expo
 
-## Chapters
+<details open> 
+  <summary><h2>Chapters</summary>
+     <img src="https://cliply.co/wp-content/uploads/2020/02/372002150_DOCUMENTS_400px.gif" alt="Unity Cookbook, Fifth Edition" height="556px" align="right">
+<ol>
 
-This unique book introduces both React and React Native, giving you a big picture view of the React ecosystem.
+  <li>Why React?</li>
 
-1. Why React?
-2. Rendering with JSX
-3. Understanding React Components and Hooks
-4. Event Handling in the React Way
-5. Crafting Reusable Components
-6. Type-Checking and Validation with TypeScript
-7. Handling Navigations with Routes
-8. Code Splitting Using Lazy Components and Suspense
-9. User Interface Framework Components
-10. High-Performance State Updates
-11. Fetching Data from a Server
-12. State Management in React
-13. Server-Side Rendering
-14. Unit Testing in React
-15. Why React Native?
-16. React Native Under the Hood
-17. Kick-Starting React Native Projects
-18. Building Responsive Layouts with Flexbox
-19. Navigating between Screens
-20. Rendering Item Lists
-21. Geolocation and Maps
-22. Collecting User Input
-23. Responding to User Gestures
-24. Showing Progress
-25. Displaying Modal Screens
-26. Using Animations
-27. Controlling Image Display
-28. Going Offline
+  <li>Rendering with JSX</li>
 
-> If you feel this book is for you, get your [copy](#) today! <img alt="Coding" height="15" width="35" src="https://media.tenor.com/ex_HDD_k5P8AAAAi/habbo-habbohotel.gif">
+  <li>Understanding React Components and Hooks</li>
 
-## Software and hardware list
+  <li>Event Handling in the React Way</li>
 
-This book assumes you have a basic understanding of the JavaScript programming language. It also assumes that you'll be following along with the examples, which require a command-line terminal, a code editor, and a web browser. You'll learn how to set up a React project in Chapter 1, Why React?.
+  <li>Crafting Reusable Components</li>
+
+  <li>Type-Checking and Validation with TypeScript</li>
+
+  <li>Handling Navigation with Routes</li>
+
+  <li>Code Splitting Using Lazy Components and Suspense</li>
+
+  <li>User Interface Framework Components</li>
+
+  <li>High-Performance State Updates</li>
+
+  <li>Fetching Data from a Server</li>
+
+  <li>State Management in React</li>
+
+  <li>Server-Side Rendering</li>
+
+  <li>Unit Testing in React</li>
+
+  <li>Why React Native?</li>
+
+  <li>React Native Under the Hood</li>
+
+  <li>Kick-Starting React Native Projects</li>
+
+  <li>Building Responsive Layouts with Flexbox</li>
+
+  <li>Navigating Between Screens</li>
+
+  <li>Rendering Item Lists</li>
+
+  <li>Geolocation and Maps</li>
+
+  <li>Collecting User Input</li>
+
+  <li>Responding to User Gestures</li>
+
+  <li>Showing Progress</li>
+
+  <li>Displaying Modal Screens</li>
+
+  <li>Using Animations</li>
+
+  <li>Controlling Image Display</li>
+
+  <li>Going Offline</li>
+
+  <li>AI as a Learning Partner</li>
+
+</ol>
+
+</details>
+
+> If you feel this book is for you, get your [copy](https://www.packtpub.com/en-us/product/react-and-react-native-9781837020294) today! <img alt="Coding" height="15" width="35" src="https://media.tenor.com/ex_HDD_k5P8AAAAi/habbo-habbohotel.gif">
+
+## Requirements for this book
+
+This book assumes you have a basic understanding of the JavaScript programming language. It also assumes that you'll be following along with the examples, which require a command-line terminal, a code editor, and a web browser. You'll learn how to set up a React project in _Chapter 1_, _Why React?_.
 
 The requirements for learning React Native are the same as for React development, but to run an app on a real device, you will need an Android or iOS smartphone. In order to run iOS apps in the simulator, you will need a Mac computer. To work with Android simulator, you can use any kind of PC.
 
@@ -81,22 +136,22 @@ The requirements for learning React Native are the same as for React development
 ## Know more on the Discord server <img alt="Coding" height="25" width="32" src="https://cliply.co/wp-content/uploads/2021/08/372108630_DISCORD_LOGO_400.gif">
 You can get more engaged on the discord server for more latest updates and discussions in the community at [Discord](#)
 
-## Download a free PDF <img alt="Coding" height="25" width="40" src="https://emergency.com.au/wp-content/uploads/2021/03/free.gif">
+## Get to know the authors
 
-_If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost. Simply click on the link to claim your free PDF._
+_Mikhail Sakhniuk_ is a seasoned software engineer specializing in TypeScript, React, and React Native. With extensive experience in developing web and mobile applications, he has worked for start-ups, fintech companies, and product companies serving millions of users. Currently, Mikhail holds a Principal Frontend Engineer position at KappaPay. In addition to his professional work, he actively contributes to the developer community by maintaining several open-source projects and sharing his knowledge through books and articles.
 
-[Free-Ebook](#) <img alt="Coding" height="15" width="35" src="https://media.tenor.com/ex_HDD_k5P8AAAAi/habbo-habbohotel.gif">
+_Rodrigo Lobenwein_ is a Tech Lead and full-stack engineer who works with React, TypeScript, .NET, and modern cloud architectures. He transitioned to tech after 15 years of leading sales and business teams, bringing an analytical mindset and a product-oriented perspective. Throughout his career, in tech and before it, Rodrigo has been the person teams turn to when they need something explained clearly. This book is a natural extension of that instinct: building solid foundations, one concept at a time.
 
-We also provide a PDF file that has color images of the screenshots/diagrams used in this book at [GraphicBundle](#) <img alt="Coding" height="15" width="35" src="https://media.tenor.com/ex_HDD_k5P8AAAAi/habbo-habbohotel.gif">
+_Adam Boduch_ has been involved in large-scale JavaScript development for nearly 15 years. Before moving to the frontend, he worked on several large-scale cloud computing products using Python and Linux. No stranger to complexity, Adam has practical experience with realworld software systems and the scaling challenges they pose.
 
-## Get to know the Authors
+<details> 
+  <summary><h2>Other related books</h2></summary>
+<ul>
 
-_Mikhail Sakhniuk_ is a seasoned software engineer skilled in TypeScript, React, and React Native. He has a decade of broad experience in the tech industry, with a specialized focus on frontend development for the past 7 years. His professional journey includes working with startups, fintech firms, and large product companies boasting over 50 million users. Currently, Mikhail is Principal Frontend Engineer at KappaPay.
+  <li><a href="https://www.packtpub.com/en-us/product/learn-react-with-typescript-third-edition/9781836643173">Learn React with TypeScript, Third Edition</a></li>
 
-_Adam Boduch_ has been involved in large-scale JavaScript development for nearly 15 years. Before moving to the frontend, he worked on several large-scale cloud computing products using Python and Linux. No stranger to complexity, Adam has practical experience with real-world software systems and the scaling challenges they pose.
+  <li><a href="https://www.packtpub.com/en-us/product/react-key-concepts-second-edition/9781836202271">React Key Concepts, Second Edition</a></li>
+ 
+</ul>
 
-_Rodrigo Lobenwein_ is a Tech Lead and full stack engineer with hands-on experience in React, TypeScript, .NET, and modern cloud-based architectures. His background in business and management, combined with his expertise in software development, allows him to understand real-world needs and translate them into effective technical solutions. He drives technical excellence and quickly becomes a key reference within engineering teams. He has previously collaborated with Packt Publishing as a technical reviewer and is passionate about understanding the core of problems and finding effective solutions, always eager to teach and explain concepts to different audiences using real-world examples.
-
-## Other Related Books
-- [React 18 Design Patterns and Best Practices - Fourth Edition](https://www.packtpub.com/product/react-18-design-patterns-and-best-practices-fourth-edition/9781803233109)
-- [React Key Concepts](https://www.packtpub.com/product/react-key-concepts/9781803234502)
+</details>
